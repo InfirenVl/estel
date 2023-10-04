@@ -39,7 +39,7 @@
             <a class="nav__button" href="contacts.html">Контакты</a>
             <a class="nav__button" href="service.html">Услуги</a>
             <a class="nav__button" href="about-us.html">О компании</a>
-            <a class="nav__button" href="catalog.html">Каталог</a>
+            <a class="nav__button" href="${pageContext.request.contextPath}/catalog">Каталог</a>
             <sec:authorize access="!isAuthenticated()">
                 <a class="nav__button" href="/registration">Регистрация</a>
                 <a class="nav__button" href="/login">Войти</a>
