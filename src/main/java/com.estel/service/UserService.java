@@ -1,8 +1,6 @@
 package com.estel.service;
 
-import com.estel.entity.Role;
 import com.estel.entity.User;
-import com.estel.repository.RoleRepository;
 import com.estel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,7 +11,6 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,8 +20,6 @@ public class UserService implements UserDetailsService {
     private EntityManager em;
     @Autowired
     UserRepository userRepository;
-    @Autowired
-    RoleRepository roleRepository;
     @Autowired
     BCryptPasswordEncoder bCryptPasswordEncoder;
 
@@ -51,8 +46,7 @@ public class UserService implements UserDetailsService {
         if (userFromDb != null) {
             return false;
         }
-
-        user.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
+        user.setRole(User.Role.USER.toString());
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         return true;

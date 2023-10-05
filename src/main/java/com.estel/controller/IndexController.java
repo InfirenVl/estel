@@ -1,5 +1,6 @@
 package com.estel.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,13 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class IndexController {
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    boolean auth = (authentication instanceof AnonymousAuthenticationToken);
-
+    @Autowired
+    Boolean getAuth;
 
     @GetMapping("/")
     public String init(Model model) {
-        model.addAttribute("auth", auth);
+        model.addAttribute("auth", getAuth);
         return "index";
     }
 }

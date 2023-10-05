@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="/css/style.min.css">
         <script src="/js/slider.js"></script>
         <script src="https://kit.fontawesome.com/ae938e4076.js" crossorigin="anonymous"></script>
-        <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
         <title>${title}</title>
     </head>
     <body>
@@ -30,7 +30,24 @@
         </div>
     </header>
     <a class="go-up-button" href="#go-up"><img src="/img/up.svg" alt="Наверх^"></a>
-    <#nested>
+    <nav>
+        <div class="menu">
+            <a class="nav__button" href="contacts.html">Контакты</a>
+            <a class="nav__button" href="service.html">Услуги</a>
+            <a class="nav__button" href="about-us.html">О компании</a>
+            <a class="nav__button" href="/catalog">Каталог</a>
+            <#if !auth!false>
+                <a class="nav__button" href="/registration">Регистрация</a>
+                <a class="nav__button" href="/login">Войти</a>
+            <#else>
+                <a class="nav__button" href="/logout">Выйти</a>
+            </#if>
+        </div>
+        <a class="nav__button" href="wip.html">Корзина<i class="fa-solid fa-basket-shopping"></i></a>
+    </nav>
+    <main>
+        <#nested>
+    </main>
     <footer>
         <div class="footer-container">
             <div class="footer-nav">

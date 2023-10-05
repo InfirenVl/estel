@@ -9,17 +9,20 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import javax.validation.Valid;
 
 @Controller
 public class RegistrationController {
     @Autowired
     private UserService userService;
+    @Autowired
+    Boolean getAuth;
+
 
     @GetMapping("/registration")
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
+        model.addAttribute("auth", getAuth);
         return "registration";
     }
 

@@ -1,21 +1,6 @@
 <#import "templates/common.ftl" as common>
 <@common.pageTemplate "Эстель Главная страница">
-    <main>
-        <nav>
-            <div class="menu">
-                <a class="nav__button" href="contacts.html">Контакты</a>
-                <a class="nav__button" href="service.html">Услуги</a>
-                <a class="nav__button" href="about-us.html">О компании</a>
-                <a class="nav__button" href="/catalog">Каталог</a>
-                <#if !auth>
-                    <a class="nav__button" href="/registration">Регистрация</a>
-                    <a class="nav__button" href="/login">Войти</a>
-                <#else>
-                    <a class="nav__button" href="/logout">Выйти</a>
-                </#if>
-            </div>
-            <a class="nav__button" href="wip.html">Корзина<i class="fa-solid fa-basket-shopping"></i></a>
-        </nav>
+
         <section class="banner">
             <h1>Сделай интерьер своей мечты вместе с Эстель!</h1>
             <img class="banner__img" src="/img/banner.svg" alt="banner">
@@ -135,5 +120,4 @@
                 </div>
             </div>
         </section>
-    </main>
 </@common.pageTemplate>
