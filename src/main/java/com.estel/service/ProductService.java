@@ -18,6 +18,7 @@ public class ProductService {
     public void saveProduct(ProductModel product) {
         log.info("Saving new {}", product);
         catalogRepository.save(product);
+
     }
 
     public void deleteProduct(int id) {
