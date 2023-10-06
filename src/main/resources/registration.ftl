@@ -13,6 +13,7 @@
         </fieldset>
         <div class="service-form__buttons">
             <button type="submit">Отправить</button>
+
         </div>
     </form>
 </@common.pageTemplate>
