@@ -1,7 +1,6 @@
-package com.estel.entity;
+package com.estel.model;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -12,14 +11,13 @@ import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "t_user")
 @Getter
 @Setter
 @AllArgsConstructor
-public class User implements UserDetails {
+public class UserModel implements UserDetails {
 
 
     @Id
@@ -39,7 +37,7 @@ public class User implements UserDetails {
     private String passwordConfirm;
 
     private String role;
-    public User() {
+    public UserModel() {
     }
 
     @Override

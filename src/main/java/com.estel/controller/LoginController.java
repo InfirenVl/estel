@@ -1,6 +1,6 @@
 package com.estel.controller;
 
-import com.estel.entity.User;
+import com.estel.util.AuthUtil;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class LoginController {
+    AuthUtil util = new AuthUtil();
+
     @GetMapping("/login")
     public String authCheck(Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        boolean auth = (authentication instanceof AnonymousAuthenticationToken);
-        model.addAttribute("auth", auth);
-        if(!auth){
+        model.addAttribute("auth", util.auth());
+        if (!util.auth()) {
             return "redirect:/";
         }
         return "login";

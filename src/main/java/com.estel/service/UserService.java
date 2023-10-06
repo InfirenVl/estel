@@ -1,6 +1,6 @@
 package com.estel.service;
 
-import com.estel.entity.User;
+import com.estel.model.UserModel;
 import com.estel.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,28 +25,28 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
+        UserModel user = userRepository.findByUsername(username);
         if (user == null) {
             throw new UsernameNotFoundException("User not found");
         }
         return user;
     }
 
-    public User findUserById(Long userId) {
-        Optional<User> userFromDb = userRepository.findById(userId);
-        return userFromDb.orElse(new User());
+    public UserModel findUserById(Long userId) {
+        Optional<UserModel> userFromDb = userRepository.findById(userId);
+        return userFromDb.orElse(new UserModel());
     }
 
-    public List<User> allUsers() {
+    public List<UserModel> allUsers() {
         return userRepository.findAll();
     }
 
-    public boolean saveUser(User user) {
-        User userFromDb = userRepository.findByUsername(user.getUsername());
+    public boolean saveUser(UserModel user) {
+        UserModel userFromDb = userRepository.findByUsername(user.getUsername());
         if (userFromDb != null) {
             return false;
         }
-        user.setRole(User.Role.USER.toString());
+        user.setRole(UserModel.Role.USER.toString());
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         return true;
@@ -61,7 +61,7 @@ public class UserService implements UserDetailsService {
         return false;
     }
 
-    public List<User> usergtList(Long idMin) {
-        return em.createQuery("SELECT u FROM User u WHERE u.id > :paramId", User.class).setParameter("paramId", idMin).getResultList();
+    public List<UserModel> usergtList(Long idMin) {
+        return em.createQuery("SELECT u FROM UserModel u WHERE u.id > :paramId", UserModel.class).setParameter("paramId", idMin).getResultList();
     }
 }
