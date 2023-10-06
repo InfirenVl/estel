@@ -3,6 +3,9 @@ package com.estel.controller;
 import com.estel.service.UserService;
 import com.estel.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,14 +18,16 @@ import javax.validation.Valid;
 public class RegistrationController {
     @Autowired
     private UserService userService;
-    @Autowired
-    Boolean getAuth;
-
 
     @GetMapping("/registration")
-    public String registration(Model model) {
+    public String authCheck(Model model) {
         model.addAttribute("userForm", new User());
-        model.addAttribute("auth", getAuth);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        boolean auth = (authentication instanceof AnonymousAuthenticationToken);
+        model.addAttribute("auth", auth);
+        if(!auth){
+            return "redirect:/";
+        }
         return "registration";
     }
 
@@ -40,6 +45,6 @@ public class RegistrationController {
             return "registration";
         }
 
-        return "redirect:/";
+        return "redirect:/login";
     }
 }

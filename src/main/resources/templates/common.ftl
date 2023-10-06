@@ -36,14 +36,16 @@
             <a class="nav__button" href="service.html">Услуги</a>
             <a class="nav__button" href="about-us.html">О компании</a>
             <a class="nav__button" href="/catalog">Каталог</a>
-            <#if !auth!false>
-                <a class="nav__button" href="/registration">Регистрация</a>
+        </div>
+        <div class="menu">
+            <#if auth>
                 <a class="nav__button" href="/login">Войти</a>
+                <a class="nav__button" href="/registration">Регистрация</a>
             <#else>
                 <a class="nav__button" href="/logout">Выйти</a>
+                <a class="nav__button" href="wip.html">Корзина<i class="fa-solid fa-basket-shopping"></i></a>
             </#if>
         </div>
-        <a class="nav__button" href="wip.html">Корзина<i class="fa-solid fa-basket-shopping"></i></a>
     </nav>
     <main>
         <#nested>
