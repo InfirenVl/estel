@@ -15,7 +15,7 @@ html, body {
 }
 
 a {
-   display: none; 
+   display: none;
    text-decoration: none;
    color: #1f1a17;
 }
@@ -1344,3 +1344,126 @@ footer p{
     justify-content: center;
 }
 @media (max-width:360px)
+
+/* registration */
+
+.registration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.registration p {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #c4150c;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registration-form__fieldset{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px;
+}
+
+.registration-form__fieldset label {
+    margin-bottom: 6px;
+}
+
+.registration-form__input {
+    width: 25vw;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 3px;
+    border: solid 1px #717171;
+    background-color: #fcfcfc;
+    color: #1f1a17;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    margin-bottom: 35px;
+}
+
+.registration-form__input:focus {
+    border-color: #1f1a17;
+}
+
+.registration-form__fieldset button {
+    width: 70%;
+    height: 40px;
+    color: #fcfcfc;
+    background-color: #da251c;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 0 auto;
+
+}
+.registration-form__fieldset button:hover{
+    transition: 0.1s;
+    background-color: #c4150c;
+}
+/* login */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.login-form__fieldset{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 40px;
+}
+
+.login-form__fieldset label {
+    margin-bottom: 6px;
+}
+
+.login-form__input {
+    width: 25vw;
+    height: 40px;
+    padding: 0 12px;
+    border-radius: 3px;
+    border: solid 1px #717171;
+    background-color: #fcfcfc;
+    color: #1f1a17;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+    outline: none;
+    margin-bottom: 35px;
+}
+
+.login-form__input:focus {
+    border-color: #1f1a17;
+}
+
+.login-form__fieldset button {
+    width: 70%;
+    height: 40px;
+    color: #fcfcfc;
+    background-color: #da251c;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 0 auto;
+
+}
+.login-form__fieldset button:hover{
+    transition: 0.1s;
+    background-color: #c4150c;
+}

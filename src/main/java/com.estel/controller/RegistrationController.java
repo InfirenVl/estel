@@ -26,7 +26,7 @@ public class RegistrationController {
     public String authCheck(Model model) {
         model.addAttribute("userForm", new UserModel());
         model.addAttribute("auth", util.auth());
-        if (!util.auth()) {
+        if (!util.auth().equals("ANONYMOUS")) {
             return "redirect:/";
         }
         return "registration";
@@ -36,6 +36,7 @@ public class RegistrationController {
     public String addUser(@ModelAttribute("userForm") @Valid UserModel userForm, BindingResult bindingResult, Model model) {
         model.addAttribute("auth", util.auth());
         if (bindingResult.hasErrors()) {
+            model.addAttribute("sizeError", "Логин и пароль должны быть от 6 символов");
             return "registration";
         }
         if (!userForm.getPassword().equals(userForm.getPasswordConfirm())) {

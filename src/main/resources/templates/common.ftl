@@ -32,13 +32,16 @@
     <a class="go-up-button" href="#go-up"><img src="/img/up.svg" alt="Наверх^"></a>
     <nav>
         <div class="menu">
-            <a class="nav__button" href="contacts.html">Контакты</a>
+            <a class="nav__button" href="/contacts">Контакты</a>
             <a class="nav__button" href="service.html">Услуги</a>
             <a class="nav__button" href="about-us.html">О компании</a>
             <a class="nav__button" href="/catalog">Каталог</a>
+            <#if auth == "ADMIN">
+                <a class="nav__button" href="/admin">Панель админа</a>
+            </#if>
         </div>
         <div class="menu">
-            <#if auth>
+            <#if auth == "ANONYMOUS">
                 <a class="nav__button" href="/login">Войти</a>
                 <a class="nav__button" href="/registration">Регистрация</a>
             <#else>

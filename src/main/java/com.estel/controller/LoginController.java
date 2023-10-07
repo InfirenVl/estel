@@ -15,7 +15,7 @@ public class LoginController {
     @GetMapping("/login")
     public String authCheck(Model model) {
         model.addAttribute("auth", util.auth());
-        if (!util.auth()) {
+        if (!util.auth().equals("ANONYMOUS")) {
             return "redirect:/";
         }
         return "login";

@@ -1,12 +1,15 @@
 <#import "templates/common.ftl" as common>
-<@common.pageTemplate "Авторизация">
-    <form method="POST" action="/login">
-        <h2>Вход в систему</h2>
-        <div>
-            <input name="username" type="text" placeholder="Username" autofocus="true"/>
-            <input name="password" type="password" placeholder="Password"/>
-            <button type="submit">Log In</button>
-            <h4><a href="/registration">Зарегистрироваться</a></h4>
-        </div>
-    </form>
+<@common.pageTemplate "Войти в аккаунт">
+    <section>
+        <h2>Войти в аккаунт</h2>
+        <form class="login-form" method="POST" action="/login">
+            <fieldset class="login-form__fieldset">
+                <label for="username">Логин</label>
+                <input class="login-form__input" name="username" type="text" placeholder="Введите логин" autofocus="true"/>
+                <label for="password">Пароль</label>
+                <input class="login-form__input" name="password" type="password" placeholder="Введите пароль"/>
+                <button type="submit">Войти</button>
+            </fieldset>
+        </form>
+    </section>
 </@common.pageTemplate>
