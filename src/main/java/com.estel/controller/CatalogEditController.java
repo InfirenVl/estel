@@ -32,18 +32,19 @@ public class CatalogEditController {
     }
 
     @PostMapping("/admin/catalog-editing/create")
-    public String createProduct(ProductModel product) {
+    public String createProduct(ProductModel product, Model model) {
+        model.addAttribute("auth", util.auth());
         productService.saveProduct(product);
         return "redirect:/admin/catalog-editing";
     }
     @PostMapping("/admin/catalog-editing/delete")
     public String deleteProduct(Integer id, Model model) {
+        model.addAttribute("auth", util.auth());
         try {
             productService.deleteProduct(id);
         } catch (EmptyResultDataAccessException e){
-           //model.addAttribute("errorId", "Error" );
+           model.addAttribute("errorId", "Товар не найден" );
         }
-
-        return "redirect:/admin/catalog-editing";
+        return "catalog-editing";
     }
 }

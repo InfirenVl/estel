@@ -8,16 +8,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class UserService implements UserDetailsService {
-    @PersistenceContext
-    private EntityManager em;
     @Autowired
     UserRepository userRepository;
     @Autowired
@@ -52,16 +47,21 @@ public class UserService implements UserDetailsService {
         return true;
 
     }
-
-    public boolean deleteUser(Long userID) {
+    public void deleteUser(Long userID) {
         if (userRepository.findById(userID).isPresent()) {
             userRepository.deleteById(userID);
-            return true;
         }
-        return false;
     }
-
-    public List<UserModel> usergtList(Long idMin) {
-        return em.createQuery("SELECT u FROM UserModel u WHERE u.id > :paramId", UserModel.class).setParameter("paramId", idMin).getResultList();
+    public void changeRole(Long userID, String userRole) {
+        if (userRepository.findById(userID).isPresent()) {
+            UserModel user = userRepository.getOne(userID);
+            if(userRole.equals(UserModel.Role.USER.toString())) {
+                user.setRole(UserModel.Role.ADMIN.toString());
+            }
+            else {
+                user.setRole(UserModel.Role.USER.toString());
+            }
+            userRepository.save(user);
+        }
     }
 }

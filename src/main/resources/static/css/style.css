@@ -12,12 +12,16 @@ html, body {
     color: #1f1a17;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex-grow: 1;
 }
 
 a {
-   display: none;
-   text-decoration: none;
-   color: #1f1a17;
+    display: none;
+    text-decoration: none;
+    color: #1f1a17;
 }
 
 ul {
@@ -111,7 +115,7 @@ header {
 }
 
 .header__logo a {
-display: block;
+    display: block;
 }
 
 .header__search button {
@@ -197,11 +201,11 @@ nav {
 @keyframes ani {
     0% {opacity: 0;}
     100% {opacity: 1;}
-  }
+}
 
 .catalog {
     display: flex;
-    margin-left: 35px; 
+    margin-left: 35px;
     margin-right: 35px;
 }
 
@@ -223,7 +227,7 @@ nav {
     padding: 20px 30px;
     width: 300px;
     border-top: solid 1px #717171;
-  }
+}
 
 .catalog__menu a:hover {
     transition: 0.1s;
@@ -232,18 +236,18 @@ nav {
 
 #close-catalog {
     border-bottom: solid 1px #717171;
-  }
+}
 
 .catalog__submenu {
     display: none;
     transform: translateX(-150%);
     animation: ani2 0.4s forwards;
-  }
+}
 
-  @keyframes ani2 {
+@keyframes ani2 {
     0% {transform: translateX(-150%);}
     100% {transform: translateY(0);}
-  }
+}
 
 .catalog__submenu__item {
     display: block;
@@ -255,10 +259,10 @@ nav {
     width: 300px;
     position: relative;
     top: -20px;
-  }
+}
 
 .catalog__menu li:hover .catalog__submenu {
-    display: block;   
+    display: block;
 }
 
 .slider {
@@ -319,7 +323,7 @@ nav {
 
 .feedback-container {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
 }
 
 .feedback-container__item {
@@ -360,6 +364,7 @@ footer {
     background-color: #1f1a17;
     color: #fcfcfc;
     padding: 15px 200px 20px;
+    flex-shrink: 0;
 }
 
 footer a {
@@ -433,7 +438,7 @@ footer p{
     section {
         padding: 30px 175px;
     }
-    
+
     h1 {
         font-size: 42px;
     }
@@ -501,7 +506,7 @@ footer p{
         color: #da251c;
         margin-bottom: 5px;
     }
-    
+
     .advantages-container__item-text {
         font-size: 16px;
         font-weight: 300;
@@ -524,8 +529,8 @@ footer p{
         }
         .header__contacts p {
             font-size: 14px;
-        } 
-        
+        }
+
         .header__search input {
             height: 34px;
         }
@@ -557,12 +562,12 @@ footer p{
             font-size: 18px;
             font-weight: 400;
         }
-        
+
         .feedback-container__item-info__text-date {
             font-size: 14px;
             font-weight: 300;
         }
-        
+
         .feedback-container__item-text {
             width: fit-content;
             font-weight: 300;
@@ -577,11 +582,11 @@ footer p{
             font-size: 16px;
             margin-right: 6px;
         }
-        
+
         footer h3 {
             font-size: 22px;
         }
-        
+
         footer p{
             font-size: 10px;
         }
@@ -589,30 +594,30 @@ footer p{
         .footer-nav{
             padding-bottom: 20px;
         }
-        
+
         .footer-nav__container {
             display: flex;
             margin-top: 10px;
         }
-        
+
         .footer-nav ul {
             margin-right: 50px;
         }
-        
+
         .footer-nav li {
             font-weight: 300;
             font-size: 14px;
             margin-bottom: 5px;
         }
-        
+
         .footer-contacts {
             width: 50%;
         }
-        
+
         .footer-contacts ul {
             margin-top: 8px;
         }
-        
+
         .footer-contacts li {
             font-size: 14px;
             margin-bottom: 10px;
@@ -640,7 +645,7 @@ footer p{
     }
     .header__contacts p {
         font-size: 12px;
-    } 
+    }
 
     .header__search input {
         height: 28px;
@@ -663,14 +668,14 @@ footer p{
 
     .catalog {
         display: flex;
-        margin-left: 15px; 
+        margin-left: 15px;
         margin-right: 35px;
     }
-       
+
     .catalog__menu__item {
-       padding: 6px 10px;
-       font-size: 14px;
-      }
+        padding: 6px 10px;
+        font-size: 14px;
+    }
 
     .catalog__submenu__item {
         width: 200px;
@@ -678,7 +683,7 @@ footer p{
         top: -10px;
         font-size: 12px;
 
-      }
+    }
     .slider {
         height: 305px;
     }
@@ -890,7 +895,7 @@ footer p{
         flex-direction: column;
     }
     .footer-nav {
-        width: 100%;    
+        width: 100%;
     }
     .footer-contacts {
         width: 100%;
@@ -1058,7 +1063,7 @@ footer p{
 
 .about-us-list__item:not(:last-child) {
     margin-bottom: 8px;
-  }
+}
 
 .about-us-list__item:before {
     content: "";
@@ -1070,8 +1075,8 @@ footer p{
     height: 8px;
     width: 8px;
     border-radius: 50%;
-  }
-  
+}
+
 .about-us__video {
     width: 50vw;
     height: 50vh;
@@ -1097,7 +1102,7 @@ footer p{
     .about-us-list__item {
         font-size: 14px;
     }
-    
+
 }
 @media (max-width:480px) {
     .about-us {
@@ -1131,7 +1136,7 @@ footer p{
 .service-container {
     display: flex;
     justify-content: space-evenly;
-    
+
 }
 .service-table {
     width:30vw;
@@ -1283,7 +1288,7 @@ footer p{
     height: 15vw;
     border: #717171 1px solid;
     border-radius: 10%;
-} 
+}
 .catalog-page-container__item:hover {
     border-color: #da251c;
     transition: 0.15s;
@@ -1328,7 +1333,7 @@ footer p{
     .catalog-page-container__item img {
         margin-bottom: 5px;
     }
-    
+
 }
 @media (max-width:360px) {
     .footer-catalog {
@@ -1461,8 +1466,52 @@ footer p{
     font-weight: 300;
     font-size: 16px;
     margin: 0 auto;
+}
+
+/*user-editing*/
+.usersTable {
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+.tableHeader td {
+    border: solid 2px #da251c;
+    background: #da251c22 ;
+    padding: 16px;
+    text-align: center;
+    font-weight: 500 ;
+}
+.tableBody td {
 
 }
+.tableBody-info_cell {
+    padding: 16px;
+    border: solid 2px #da251c;
+}
+.tableBody-button_cell {
+    border: solid 2px #da251c;
+}
+.tableBody-button_cell form {
+    width: 100%;
+    height: 100%;
+}
+.tableBody-button_cell button {
+    padding: 16px;
+    width: 100px;
+    height: 100%;
+    color: #fcfcfc;
+    background-color: #da251c;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+.tableBody-button_cell button:hover{
+    transition: 0.1s;
+    background-color: #c4150c;
+}
+
 .login-form__fieldset button:hover{
     transition: 0.1s;
     background-color: #c4150c;
