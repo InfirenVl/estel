@@ -30,6 +30,7 @@ public class ProductService {
 
     public void deleteProduct(int id) {
         catalogRepository.deleteById(id);
+
     }
 
     public ProductModel getProductById(int id) {

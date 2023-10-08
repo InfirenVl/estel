@@ -28,7 +28,9 @@ public class CatalogController {
         model.addAttribute("auth", util.auth());
         model.addAttribute("catalog", productService.listProducts(title));
         return "catalog";
+
     }
+
 
 
 }
