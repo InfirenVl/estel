@@ -41,7 +41,7 @@ public class CatalogEditController {
         try {
             productService.deleteProduct(id);
         } catch (EmptyResultDataAccessException e){
-            model.addAttribute("errorId", "Error" );
+           //model.addAttribute("errorId", "Error" );
         }
 
         return "redirect:/admin/catalog-editing";

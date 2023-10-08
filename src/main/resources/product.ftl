@@ -10,7 +10,7 @@
                 <div class="product-details">
                     <p>Коллекция: ${product.collection}</p>
                     <br>
-                    <p>${product.description}</p>
+                    <p>Описание: ${product.description}</p>
                     <br>
                     <p>Цена:${product.price}</p>
                     <br>

@@ -1467,3 +1467,61 @@ footer p{
     transition: 0.1s;
     background-color: #c4150c;
 }
+.block-product-image{
+    display: flex;
+    justify-content: center;
+    width: 20vh;
+    height: 20vh;
+
+}
+.block-product{
+    background-color: lightgray;
+    border: solid;
+    border-color: lightgray;
+    margin: 2vh;
+    display: flex;
+    width: 25vh;
+    height: 30vh;
+    flex-direction: column;
+
+}
+.block-product-title{
+    display: flex;
+    justify-content: center;
+}
+.catalog-block{
+    border: solid;
+    justify-content: center;
+    margin-right: 10vh;
+    margin-left: 10vh;
+    margin-bottom: 20vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.block-image{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: center;
+}
+.product-title{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: center;
+}
+.catalog-page{
+    display: flex;
+    flex-direction: row;
+
+}
+.filters-block{
+    width: 20vh;
+    /*height: 40vh;*/
+    margin-left: 10vh;
+    border: solid;
+    margin-top: 5vh;
+    margin-bottom: 40vh;
+
+}

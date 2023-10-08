@@ -12,7 +12,7 @@
             <input type="submit" value="Добавить товар"/>
         </form>
         <hr>
-<#--        <p>${errorId}</p>-->
+
         <form action="/admin/catalog-editing/delete" method="post">
             Код товара:<input type="number" name="id"/><br><br>
             <input type="submit" value="Удалить товар"/>
