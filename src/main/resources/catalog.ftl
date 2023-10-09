@@ -1,9 +1,26 @@
 <#import "templates/common.ftl" as common>
 <@common.pageTemplate "Каталог">
-    <div>
-        <p>Каталог</p>
+    <div class="catalog-web">
+        <div class="title-catalog">
+            Каталог
+        </div>
+        <div class="search">
+            <form class="search-form" action="/catalog" method="get">
+                    <input class="search-pole" type="text" name="title">
+                <input class="search-button" type="submit" value="Поиск"/>
+            </form>
+        </div>
         <div class="catalog-page">
             <div class="filters-block">
+                <form class="filter-form" action="/catalog" method="get" >
+                    <label class="label-filter" for="category" name="category">Категория</label>
+                    <select class="filter-category" name="category" id="category">
+                        <option value="Кухни" name="category">Кухни</option>
+                        <option value="sleeping" name="category">Спальня</option>
+                        <option value="Гостиная" name="category">Гостиная</option>
+                    </select>
+                    <input class="filter-button" type="submit" value="поиск"/>
+                </form>
 
             </div>
             <div class="catalog-block">

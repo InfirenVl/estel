@@ -13,14 +13,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import javax.persistence.EntityExistsException;
 
 
 @Controller
 @Slf4j
 @RequiredArgsConstructor
 public class CatalogEditController {
-    @Autowired
     private final ProductService productService;
     AuthUtil util = new AuthUtil();
 
@@ -48,3 +46,4 @@ public class CatalogEditController {
         return "catalog-editing";
     }
 }
+

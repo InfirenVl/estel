@@ -154,7 +154,7 @@ header {
 }
 
 nav {
-    position: -webkit-sticky;
+    /*position: -webkit-sticky;*/
     position: sticky;
     top: 0;
     z-index: 1;
@@ -1525,8 +1525,7 @@ footer p{
 }
 .block-product{
     background-color: lightgray;
-    border: solid;
-    border-color: lightgray;
+    border-radius: 3px;
     margin: 2vh;
     display: flex;
     width: 25vh;
@@ -1539,12 +1538,11 @@ footer p{
     justify-content: center;
 }
 .catalog-block{
-    border: solid;
     justify-content: center;
     margin-right: 10vh;
-    margin-left: 10vh;
-    margin-bottom: 20vh;
-    margin-top: 5vh;
+    /*margin-left: 10vh;*/
+    margin-bottom: 10vh;
+    margin-top: 2vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -1569,8 +1567,90 @@ footer p{
     width: 20vh;
     /*height: 40vh;*/
     margin-left: 10vh;
-    border: solid;
-    margin-top: 5vh;
+    border: solid lightgray;
+    border-radius: 5px;
+    margin-top: 3vh;
     margin-bottom: 40vh;
 
+}
+.search{
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 300;
+    font-family: 'Roboto', sans-serif;
+
+}
+.catalog-web{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.search-form{
+
+}
+.search-pole{
+    width: 18vh;
+    height: 3vh;
+    border: solid lightgray;
+    border-radius: 3px;
+}
+.search-button{
+    width: 6vh;
+    height: 3vh;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #c4150c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+}
+.title-catalog{
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+}
+.label-filter{
+    display: flex;
+    justify-content: center;
+    margin-top: 1vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+.filter-category{
+    border-radius: 5px;
+    background-color: white;
+    display: flex;
+    /*margin-left: 6vh;*/
+    /*margin-right: 6vh;*/
+    /*background-color: lightgray;*/
+    text-align: center;
+    margin-top: 6px;
+    width: 10vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+.filters-block{
+    display: flex;
+    justify-content: center;
+}
+.filter-button{
+    margin-top: 1vh;
+    width: 10vh;
+    height: 3vh;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: #c4150c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
 }
