@@ -1,23 +1,39 @@
 <#import "templates/common.ftl" as common>
 <@common.pageTemplate "Каталог">
-    <h3>Создать новый товар</h3>
-    <div class="product">
-        <form action="/admin/catalog-editing/create" method="post">
-            Ссылка на изображение:<input type="text" name="image" required/><br><br>
-            Название товара: <input type="text" name="title" required/><br><br>
-            Коллекция товара: <input type="text" name="collection" required/><br><br>
-            Категория товара: <input type="text" name="category" required/><br><br>
-            Цена: <input type="number" name="price" required/><br><br>
-            Описание товара: <input type="text" name="description" required/><br><br>
-            <input type="submit" value="Добавить товар"/>
-        </form>
-        <hr>
-
-        <form action="/admin/catalog-editing/delete" method="post">
-            Код товара:<input type="number" name="id" required/><br><br>
-            <input type="submit" value="Удалить товар"/>
-        </form>
-        <p>${errorId!""}</p>
-
+    <div class="catalog-edit-page">
+        <div class="catalog-edit-page-label">
+            Создать новый товар
+        </div>
+        <div class="product-add">
+            <form action="/admin/catalog-editing/create" method="post">
+                <div class="form-column">
+                    <div class="text-field-div"><input class="text-field" type="text" name="image"
+                                                       placeholder="Ссылка на изображение" required/></div>
+                    <div class="text-field-div"><input class="text-field" type="text" name="title"
+                                                       placeholder="Название товара" required/></div>
+                    <div class="text-field-div"><input class="text-field" type="text" name="collection"
+                                                       placeholder="Коллекция товара" required/></div>
+                    <div class="text-field-div"><select class="text-field" name="category"
+                                                        placeholder="Категория товара" required>
+                            <option value="">Выберите категорию</option>
+                            <option value="kitchen" name="category">Кухни</option>
+                            <option value="sleeping" name="category">Спальня</option>
+                            <option value="hall" name="category">Гостиная</option>
+                        </select></div>
+                    <div class="text-field-div"><input class="text-field" type="number" name="price" placeholder="Цена"
+                                                       required/></div>
+                    <div class="text-field-div"><input class="text-field" type="text" name="description"
+                                                       placeholder="Описание товара" required/></div>
+                    <div class="text-field-div"><input type="submit" class="add-button" value="Добавить товар"/></div>
+                </div>
+            </form>
+        </div>
     </div>
+
+
+<#--            <form action="/admin/catalog-editing/delete" method="post">-->
+<#--                Код товара:<input type="number" name="id" required/><br><br>-->
+<#--                <input type="submit" value="Удалить товар"/>-->
+<#--            </form>-->
+<#--            <p>${errorId!""}</p>-->
 </@common.pageTemplate>
