@@ -1,24 +1,39 @@
 <#import "templates/common.ftl" as common>
-    <@common.pageTemplate title="${product.title}">
-        <main>
-            <div class="product">
-                <h1>${product.title}</h1>
+<@common.pageTemplate title="${product.title}">
+    <main>
+        <div class="product-page">
 
+            <div class="product-plate">
                 <div class="product-image">
-                    <img src="${product.image}" alt="${product.title}">
+                    <img class="image-product" src="${product.image}" alt="${product.title}">
                 </div>
                 <div class="product-details">
-                    <p>Коллекция: ${product.collection}</p>
-                    <br>
-                    <p>Описание: ${product.description}</p>
-                    <br>
-                    <p>Цена:${product.price}</p>
-                    <br>
-                    <p>Категория:${product.category}</p>
-                    <br>
-                    <p>Код товара:${product.id}</p>
-
+                    <div class="title-prod">
+                        ${product.title}
+                    </div>
+                    <div class="description-option">
+                        Коллекция: ${product.collection}
+                    </div>
+                    <div class="description-option">
+                        Цена:${product.price}
+                    </div>
+                    <div class="description-option">
+                        Категория:${product.category}
+                    </div>
+                    <div class="description-option">
+                        Код товара:${product.id}
+                    </div>
+                    <div class="description-option">
+                        Описание: ${product.description}
+                    </div>
+                    <button class="button-buy">
+                        В корзину
+                    </button>
+                    <button class="button-more">
+                        Подробнее
+                    </button>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
 </@common.pageTemplate>

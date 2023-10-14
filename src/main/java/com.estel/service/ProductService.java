@@ -20,6 +20,7 @@ public class ProductService {
         if (title != null) return catalogRepository.findByTitle(title);
         return catalogRepository.findAll();
     }
+
     public List<ProductModel> listCategory(String category) {
         if (category != null) return catalogRepository.findByCategory(category);
         return catalogRepository.findAll();

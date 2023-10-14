@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
@@ -25,11 +26,11 @@ public class UserModel implements UserDetails {
     @Column(name = "id", unique = true, nullable = false)
     private Long id;
 
-    @Size(min= 6, message = "Не меньше 6 знаков")
+    @Size(min = 6, message = "Не меньше 6 знаков")
     @Column(name = "username")
     private String username;
 
-    @Size(min= 6, message = "Не меньше 6 знаков")
+    @Size(min = 6, message = "Не меньше 6 знаков")
     @Column(name = "password")
     private String password;
 
@@ -37,6 +38,7 @@ public class UserModel implements UserDetails {
     private String passwordConfirm;
 
     private String role;
+
     public UserModel() {
     }
 
@@ -67,6 +69,7 @@ public class UserModel implements UserDetails {
         list.add(new SimpleGrantedAuthority("ROLE_" + role));
         return list;
     }
+
     public enum Role {
         USER,
         ADMIN
