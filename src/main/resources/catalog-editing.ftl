@@ -28,12 +28,21 @@
                 </div>
             </form>
         </div>
+        <div class="catalog-edit-page-label">
+           Удалить товар
+        </div>
+        <div class="product-add">
+            <form action="/admin/catalog-editing/delete" method="post">
+                <div class="text-field-div">
+                    Код товара:<input class="text-field" type="number" name="id" required/>
+                </div>
+            <input class="add-button" type="submit" value="Удалить товар"/>
+                <p>${errorId!""}</p>
+            </form>
+
+        </div>
     </div>
 
 
-<#--            <form action="/admin/catalog-editing/delete" method="post">-->
-<#--                Код товара:<input type="number" name="id" required/><br><br>-->
-<#--                <input type="submit" value="Удалить товар"/>-->
-<#--            </form>-->
-<#--            <p>${errorId!""}</p>-->
+            <
 </@common.pageTemplate>

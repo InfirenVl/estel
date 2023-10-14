@@ -1855,7 +1855,7 @@ footer p {
 
 .product-add {
     display: flex;
-    height: 90vh;
+    height: 40vh;
     /*flex-direction: column;*/
     justify-content: center;
     margin-top: 4vh;
