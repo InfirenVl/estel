@@ -11,13 +11,13 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ProductModel {
+public class PostModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private int id;
     @Column(name = "image")
-    private String image; //Ссылка на объект в Object Storage
+    private String image;
     @Column(name = "title")
     private String title;
     @Column(name = "collection")

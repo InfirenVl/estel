@@ -1,12 +1,12 @@
 package com.estel.repository;
 
-import com.estel.model.ProductModel;
+import com.estel.model.PostModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface CatalogRepository extends JpaRepository<ProductModel, Integer> {
-    List<ProductModel> findByTitle(String title);
+public interface CatalogRepository extends JpaRepository<PostModel, Integer> {
+    List<PostModel> findByTitle(String title);
 
-    List<ProductModel> findByCategory(String category);
+    List<PostModel> findByCategory(String category);
 }

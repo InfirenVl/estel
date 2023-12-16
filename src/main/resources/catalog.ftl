@@ -24,7 +24,7 @@
                 </form>
             </div>
             <div class="catalog-block">
-                <#list category as product>
+                <#list category as post>
                     <div class="block-product">
                         <div class="block-image">
                             <img class="block-product-image" src=${product.image} alt="">

@@ -14,11 +14,11 @@ public class ProductController {
     private final ProductService productService;
     AuthUtil util = new AuthUtil();
 
-    @GetMapping("catalog/product/{id}")
+    @GetMapping("topic/post/{id}")
     public String productInfo(@PathVariable Integer id, Model model) {
         model.addAttribute("auth", util.auth());
         model.addAttribute("product", productService.getProductById(id));
-        return "product";
+        return "post";
     }
 
 

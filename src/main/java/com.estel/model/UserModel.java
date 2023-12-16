@@ -72,6 +72,7 @@ public class UserModel implements UserDetails {
 
     public enum Role {
         USER,
+        MODERATOR,
         ADMIN
     }
 
