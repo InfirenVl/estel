@@ -13,9 +13,12 @@ public class AuthUtil {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("ROLE_ADMIN"))) {
             return "ADMIN";
+        }else if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("ROLE_MODERATOR"))) {
+            return "MODERATOR";
         } else if (authentication.getAuthorities().stream().anyMatch(r -> r.getAuthority().equals("ROLE_USER"))) {
             return "USER";
         }
+
         return "ANONYMOUS";
     }
 }
