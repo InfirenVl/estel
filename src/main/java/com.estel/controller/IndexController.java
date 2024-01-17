@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequiredArgsConstructor
 public class IndexController {
     private final TopicService topicService;
+    private final PostService postService;
     AuthUtil util = new AuthUtil();
 
     @GetMapping("/")
@@ -21,6 +22,7 @@ public class IndexController {
                        Model model) {
         model.addAttribute("auth", util.auth());
         model.addAttribute("topics", topicService.listTopics(title));
+        model.addAttribute("posts", postService.listPosts(title));
         return "index";
     }
 }

@@ -1,40 +1,47 @@
 <#macro pageTemplate title>
-    <html lang="ru">
+    <!DOCTYPE html>
+    <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/css/style.css">
-        <script src="https://kit.fontawesome.com/ae938e4076.js" crossorigin="anonymous"></script>
-        <link rel="shortcut icon" href="/img/pc.ico" type="image/x-icon">
         <title>${title}</title>
+        <link rel="shortcut icon" href="/img/logo.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="https://kit.fontawesome.com/06d986b207.js" crossorigin="anonymous"></script>
     </head>
     <body>
+    <header class="header">
+        <div class="header-logo__container">
+            <img class="header__logo" src="/img/pc.ico" alt="логотип">
+            <p class="header-logo__text">Hard<span>Fix</span></p>
+        </div>
+        <nav class="nav">
+            <ul class="menu">
+                <li class="menu__items"><a href="/" class="menu__link">Главная</a></li>
 
-
-    <nav>
-        <div class="menu">
-            <a class="nav__button" href="/">Главная</a>
-<#--            <a class="nav__button" href="service.html">Темы</a>-->
-            <#if auth == "USER" || auth == "ADMIN" || auth == "MODERATOR">
-                <a class="nav__button" href="/new-post">Новый пост</a>
-            </#if>
-<#--            <a class="nav__button" href="/catalog">Каталог</a>-->
-            <#if auth == "ADMIN">
-                <a class="nav__button" href="admin/user-editing">Пользователи</a>
-            </#if>
-            <#if auth == "ANONYMOUS">
-                <a class="nav__button" href="/login">Войти</a>
-                <a class="nav__button" href="/registration">Регистрация</a>
-            <#else>
-                <a class="nav__button" href="/logout">Выйти</a>
-                <#if auth == "MODERATOR" || auth == "ADMIN">
-                    <a class="nav__button" href="wip.html">Модерация</a>
+                <#if auth == "USER" || auth == "ADMIN">
+                    <li class="menu__items"><a href="/new-post" class="menu__link">Новый пост</a></li>
                 </#if>
 
+                <#if auth == "ADMIN">
+                    <li class="menu__items"><a href="admin/user-editing" class="menu__link">Пользователи</a></li>
+                </#if>
+
+            </ul>
+        </nav>
+        <div class="header__buttons">
+            <#if auth == "ANONYMOUS">
+                <a href="/login" class="header__btn"><i class="fa-solid fa-key"></i>Войти</a>
+                <a href="/registration" class="header__btn"><i class="fa-solid fa-address-card"></i> Зарегистрироваться</a>
+            <#else>
+                <a href="/logout" class="header__btn"><i class="fa-solid fa-right-from-bracket"></i>Выйти</a>
+
+
             </#if>
+
         </div>
-    </nav>
+    </header>
+
     <main>
         <#nested>
     </main>
